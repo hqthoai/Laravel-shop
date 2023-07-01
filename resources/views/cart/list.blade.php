@@ -13,7 +13,7 @@
         </div>
     </div>
 
-
+    @include('admin.alert')
     @if(count($products) !== 0)
 	<form class="bg0 p-t-45 p-b-85" method="POST">
 		<div class="container">
@@ -44,7 +44,7 @@
 								<tr class="table_row">
 									<td class="column-1">
 										<div class="how-itemcart1">
-											<img src="{{ $product->thumb }}" alt="IMG">
+											<img src="{{ $product->thumb }}" alt="{{ $product->name }}">
 										</div>
 									</td>
 									<td class="column-2">{{ $product->name }}</td>
@@ -76,7 +76,7 @@
 
 						<div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
 							<div class="flex-w flex-m m-r-20 m-tb-5">
-								<input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text" name="coupon" placeholder="Coupon Code">
+								<input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text" name="coupon" placeholder="Coupon Code" >
 
 								<div class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
 									Apply coupon
@@ -110,6 +110,37 @@
 							</div>
 						</div>
 
+                        <div class="flex-w flex-t bor12 p-t-15 p-b-30">
+							<div class="size-110 p-r-18 p-r-0-sm w-full-ssm">
+								<div class="p-t-15">
+									<span class="stext-112 cl8 ">
+										Delivery Information
+									</span>
+
+									<div class="bor8 bg0 m-b-22">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" placeholder="Name" value="{{ old('name') }}">
+									</div>
+
+                                    <div class="bor8 bg0 m-b-22">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" placeholder="Phone Number" value="{{ old('phone') }}">
+									</div>
+
+									<div class="bor8 bg0 m-b-22">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address" placeholder="Address" value="{{ old('address') }}">
+									</div>
+
+                                    <div class="bor8 bg0 m-b-22">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="email" name="email" placeholder="Email">
+									</div>
+
+                                    <div class="bor8 bg0 m-b-22">
+										<textarea class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="content" placeholder="Note"></textarea>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
 						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
 							Proceed to Checkout
 						</button>
@@ -124,3 +155,4 @@
     @endif
 
 @endsection
+

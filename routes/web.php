@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CartController as AdminCartController;
 use App\Http\Controllers\Admin\MainAdminController;
 use App\Http\Controllers\MainController;
 
@@ -35,6 +36,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('', [MainAdminController::class, 'index']) -> name('admin');
         Route::get('main', [MainAdminController::class, 'index']);
 
+        # Order
+        Route::get('customers', [AdminCartController::class, 'index']);
+        Route::get('customers/view/{customer}', [AdminCartController::class, 'show']);
         # Menu
         Route::prefix('menus')->group(function () {
             Route::get('add', [MenuController::class, 'create']);
@@ -81,5 +85,7 @@ Route::post('/add-cart',[CartController::class,'index']);
 Route::get('/cart',[CartController::class,'show']);
 Route::post('/update-cart', [CartController::class, 'update']);
 Route::get('/cart/delete/{id}',[CartController::class,'remove']);
+Route::post('/cart',[CartController::class,'checkout']);
+
 
 

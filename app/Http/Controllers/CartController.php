@@ -44,4 +44,10 @@ class CartController extends Controller
         $this->cartService -> remove($id);
         return redirect('/cart');
     }
+
+    public function checkout(Request $request) {
+        $this->cartService->checkout($request);
+
+        return redirect() -> back();
+    }
 }

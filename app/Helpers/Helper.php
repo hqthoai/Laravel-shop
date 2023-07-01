@@ -62,6 +62,19 @@ class Helper {
         return $html;
     }
 
+    public static function getMenu($menus){
+        $html='';
+        foreach($menus as $key => $menu){
+            if ($menu->parent_id == 0){
+                $html.='
+                <li class="p-b-10">
+							<a href="/category/'.$menu->id.'-'.Str::slug($menu->name,'-').'.html" class="stext-107 cl7 hov-cl1 trans-04">
+                        '.$menu->name.'</a></li> ';
+                }
+            }
+        return $html;
+    }
+
     public static function isChild($menus, $id){
         foreach ($menus as $menu){
             if ($menu->parent_id == $id){

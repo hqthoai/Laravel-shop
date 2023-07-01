@@ -106,6 +106,24 @@
             </ul>
         </li>
 
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-cart-arrow-down"></i>
+              <p>
+                Orders
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li li class="nav-item">
+                    <a href="/admin/customers" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>List Order</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

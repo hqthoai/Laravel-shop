@@ -31,10 +31,15 @@
 
                 <!-- Icon header -->
                 <div class="wrap-icon-header flex-w flex-r-m">
-                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-                        <i class="zmdi zmdi-search"></i>
-                    </div>
+                    <form class="form-search" action="/find">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-search" name="query" placeholder="Search..." >
 
+                            <div class="search-result">
+
+                            </div>
+                        </div>
+                    </form>
 
                     <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
                     data-notify="{{ !is_null(\Session::get('carts')) ? count(\Session::get('carts')) : 0 }}">
@@ -56,11 +61,15 @@
 
         <!-- Icon header -->
         <div class="wrap-icon-header flex-w flex-r-m m-r-15">
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-                <i class="zmdi zmdi-search"></i>
-            </div>
+            <form class="form-inline">
+                <input type="text" class="form-control" name="input-search" placeholder="Search.." >
 
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+                <div class="search-result">
+                </div>
+            </form>
+
+
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="{{ !is_null(\Session::get('carts')) ? count(\Session::get('carts')) : 0 }}">
                 <i class="zmdi zmdi-shopping-cart"></i>
             </div>
 
@@ -93,19 +102,23 @@
         </ul>
     </div>
 
-    <!-- Modal Search -->
+    {{-- <!-- Modal Search -->
     <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
         <div class="container-search-header">
             <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
                 <img src="/template/images/icons/icon-close2.png" alt="CLOSE">
             </button>
 
-            <form class="wrap-search-header flex-w p-l-15">
+            <form action="/search" class="wrap-search-header flex-w p-l-15" method="GET" >
                 <button class="flex-c-m trans-04">
                     <i class="zmdi zmdi-search"></i>
                 </button>
-                <input class="plh3" type="text" name="search" placeholder="Search...">
+                <input class="plh3" id="input-search" type="text" name="query" placeholder="Search...">
+                <div class="search-result">
+
+                </div>
+
             </form>
         </div>
-    </div>
+    </div> --}}
 </header>

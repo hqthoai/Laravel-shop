@@ -231,3 +231,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!--===============================================================================================-->
 <script src="/template/js/main.js"></script>
 <script src="/template/js/public.js"></script>
+<!--===============================================================================================-->
+<script>
+$('.search-result').hide();
+$('.input-search').keyup(function(){
+    var text = $(this).val();
+    $.ajax({
+        url: "{{ route('search') }}?query="+ text,
+        type:'GET',
+
+        success: function(result){
+            $('.search-result').show(20);
+            $('.search-result').html(result);
+        }
+    });
+})
+</script>

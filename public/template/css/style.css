@@ -2,6 +2,26 @@
     display: none;
 }
 
-.column-6 {
+.form-search .form-group {
+    font-family: Poppins-Medium;
+    width: 300px;
+    position: relative;
+}
 
+.form-search .search-result {
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+
+}
+
+.form-search .search-result h5 {
+    color: #6c7ae0;
+    font-size: 14px;
+}
+
+.form-search .search-result p {
+    font-size: 12px;
+    font-style: italic;
 }

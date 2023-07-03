@@ -4,6 +4,7 @@ $.ajaxSetup({
     }
 });
 
+
 function loadMore(){
     const page = parseInt($('#page').val());
     $.ajax({
@@ -22,5 +23,6 @@ function loadMore(){
         }
     })
 }
+
 
 

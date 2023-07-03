@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\MenuController as HomeMenuController;
 use App\Http\Controllers\ProductController as HomeProductController;
+use App\Http\Controllers\SearchController;
 use App\Http\Services\Upload\UploadService;
 use Illuminate\Support\Facades\Route;
 
@@ -86,6 +87,8 @@ Route::get('/cart',[CartController::class,'show']);
 Route::post('/update-cart', [CartController::class, 'update']);
 Route::get('/cart/delete/{id}',[CartController::class,'remove']);
 Route::post('/cart',[CartController::class,'checkout']);
+Route::get('/search',[SearchController::class,'search'])->name('search');
+Route::get('/find',[SearchController::class,'find']);
 
 
 
